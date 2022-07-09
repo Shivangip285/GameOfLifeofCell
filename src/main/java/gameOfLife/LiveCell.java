@@ -1,5 +1,7 @@
 package gameOfLife;
 
+import static gameOfLife.CellState.Alive;
+
 public class LiveCell implements Cell {
 
     public static final Cell INSTANCE = new LiveCell();
@@ -8,7 +10,8 @@ public class LiveCell implements Cell {
     }
 
     public boolean isAlive() {
-        return true;
+        CellState cellState=CellState.valueOf(String.valueOf(Alive));
+        return cellState.valueOf(Alive);
     }
 
     public Cell nextGeneration(int liveNeighbours) {
